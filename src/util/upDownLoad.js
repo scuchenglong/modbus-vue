@@ -46,7 +46,7 @@ export default {
             loading.close();
             Message({
                 type: "error",
-                message: "下载出错!"
+                message: "下载出错!" + err
             })
         })
     },

@@ -91,8 +91,6 @@ RouterPlugin.install = function (vue, router, store, i18n) {
          * first: 为了区分外界 调用formatRoutes 和 当前文件调用 formatRoutes
          */
         formatRoutes: function (aMenu = [], first) {
-            // console.log('aMenu')
-            // console.log(aMenu)
             const aRouter = []
             // 获取到全局配置中的 props
             const propsConfig = this.$website.menu.props;
