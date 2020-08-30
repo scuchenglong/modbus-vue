@@ -1,5 +1,15 @@
 import request from '@/router/axios';
 
+export const pushBase = (id) => {
+    return request({
+        url: '/api/memo-equipbase/equipbase/pushBase',
+        method: 'post',
+        params: {
+            id
+        }
+    })
+}
+
 export const getList = (current, size, params) => {
     return request({
         url: '/api/memo-equipbase/equipbase/list',

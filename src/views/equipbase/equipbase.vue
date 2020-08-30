@@ -27,15 +27,27 @@
                    @click="handleDelete">删 除
         </el-button>
       </template>
+      <template slot="category"
+                slot-scope="{row}">
+        <el-tag>{{ row.categoryName }}</el-tag>
+      </template>
+      <template slot-scope="scope" slot="menu">
+        <el-button type="text" size="small" @click.stop="pushBase(scope.row)" icon="el-icon-share">推送</el-button>
+      </template>
+
     </avue-crud>
   </basic-container>
 </template>
 
 <script>
-import {getList, getDetail, add, update, remove} from "@/api/equipbase/equipbase";
+import AvueUeditor from 'avue-plugin-ueditor';
+import {getList, getDetail, add, update, remove, pushBase} from "@/api/equipbase/equipbase";
 import {mapGetters} from "vuex";
 
 export default {
+  comments: {
+    AvueUeditor
+  },
   data() {
     return {
       form: {},
@@ -50,6 +62,7 @@ export default {
       option: {
         height: 'auto',
         calcHeight: 30,
+        dialogWidth: 900,
         tip: false,
         searchShow: true,
         searchMenuSpan: 6,
@@ -57,12 +70,13 @@ export default {
         index: true,
         viewBtn: true,
         selection: true,
+        excelBtn: true,
         dialogClickModal: false,
         column: [
-
           {
             label: "局码-P",
             prop: "bureCode",
+            value: "P",
             rules: [{
               required: true,
               message: "请输入局码-P",
@@ -72,6 +86,7 @@ export default {
           {
             label: "站码-QIP",
             prop: "statCode",
+            value: "QIP",
             rules: [{
               required: true,
               message: "请输入站码-QIP",
@@ -81,6 +96,9 @@ export default {
           {
             label: "设备id",
             prop: "deviId",
+            span: 24,
+            row: true,
+            search: true,
             rules: [{
               required: true,
               message: "请输入设备id（能管系统提供）",
@@ -136,7 +154,6 @@ export default {
             label: "设备型号",
             prop: "dType",
             rules: [{
-              required: true,
               message: "请输入设备型号",
               trigger: "blur"
             }]
@@ -145,7 +162,6 @@ export default {
             label: "SN码",
             prop: "dSn",
             rules: [{
-              required: true,
               message: "请输入SN码",
               trigger: "blur"
             }]
@@ -172,7 +188,6 @@ export default {
             label: "设备规格",
             prop: "dSpec",
             rules: [{
-              required: true,
               message: "请输入设备规格",
               trigger: "blur"
             }]
@@ -199,7 +214,6 @@ export default {
             label: "厂商联系人",
             prop: "dMfLink",
             rules: [{
-              required: true,
               message: "请输入厂商联系人",
               trigger: "blur"
             }]
@@ -208,7 +222,6 @@ export default {
             label: "设备描述",
             prop: "dDesc",
             rules: [{
-              required: true,
               message: "请输入设备描述",
               trigger: "blur"
             }]
@@ -217,7 +230,6 @@ export default {
             label: "IP地址",
             prop: "dIp",
             rules: [{
-              required: true,
               message: "请输入IP地址",
               trigger: "blur"
             }]
@@ -225,8 +237,10 @@ export default {
           {
             label: "生产日期",
             prop: "dProDate",
+            type: "date",
+            format: "yyyy-MM-dd hh:mm:ss",
+            valueFormat: "yyyy-MM-dd hh:mm:ss",
             rules: [{
-              required: true,
               message: "请输入生产日期",
               trigger: "blur"
             }]
@@ -234,8 +248,10 @@ export default {
           {
             label: "采购日期",
             prop: "dBuyDate",
+            type: "date",
+            format: "yyyy-MM-dd hh:mm:ss",
+            valueFormat: "yyyy-MM-dd hh:mm:ss",
             rules: [{
-              required: true,
               message: "请输入采购日期",
               trigger: "blur"
             }]
@@ -243,8 +259,10 @@ export default {
           {
             label: "使用日期",
             prop: "dUseDate",
+            type: "date",
+            format: "yyyy-MM-dd hh:mm:ss",
+            valueFormat: "yyyy-MM-dd hh:mm:ss",
             rules: [{
-              required: true,
               message: "请输入使用日期",
               trigger: "blur"
             }]
@@ -253,7 +271,6 @@ export default {
             label: "设备成本",
             prop: "dCost",
             rules: [{
-              required: true,
               message: "请输入设备成本",
               trigger: "blur"
             }]
@@ -261,8 +278,10 @@ export default {
           {
             label: "使用期限",
             prop: "dUseLim",
+            type: "date",
+            format: "yyyy-MM-dd hh:mm:ss",
+            valueFormat: "yyyy-MM-dd hh:mm:ss",
             rules: [{
-              required: true,
               message: "请输入使用期限",
               trigger: "blur"
             }]
@@ -271,7 +290,6 @@ export default {
             label: "特殊参数",
             prop: "dSpecPara",
             rules: [{
-              required: true,
               message: "请输入特殊参数",
               trigger: "blur"
             }]
@@ -279,26 +297,34 @@ export default {
           {
             label: "上次推送时间",
             prop: "pushTime",
+            type: "date",
+            format: "yyyy-MM-dd hh:mm:ss",
+            valueFormat: "yyyy-MM-dd hh:mm:ss",
             rules: [{
-              required: true,
               message: "请输入上次推送时间",
               trigger: "blur"
             }]
           },
           {
-            label: "推送返回值",
+            label: "推送返回type",
             prop: "pushType",
             rules: [{
-              required: true,
               message: "请输入推送返回值",
               trigger: "blur"
             }]
           },
           {
-            label: "推送返回值",
+            label: "推送返回res",
             prop: "pushRes",
             rules: [{
-              required: true,
+              message: "请输入推送返回值",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "推送返回msg",
+            prop: "pushMsg",
+            rules: [{
               message: "请输入推送返回值",
               trigger: "blur"
             }]
@@ -307,21 +333,10 @@ export default {
             label: "备注",
             prop: "remark",
             rules: [{
-              required: true,
               message: "请输入备注",
               trigger: "blur"
             }]
-          },
-          {
-            label: "推送返回值",
-            prop: "pushMsg",
-            rules: [{
-              required: true,
-              message: "请输入推送返回值",
-              trigger: "blur"
-            }]
-          },
-        ]
+          }]
       },
       data: []
     };
@@ -345,6 +360,24 @@ export default {
     }
   },
   methods: {
+    pushBase(row) {
+      this.$confirm("确定推送本条数据?", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning"
+      })
+          .then(() => {
+            pushBase(row.id).then(() => {
+              this.onLoad(this.page);
+              this.$message({
+                type: "success",
+                message: "操作成功!"
+              });
+            }, error => {
+              console.log(error);
+            });
+          })
+    },
     rowSave(row, loading, done) {
       add(row).then(() => {
         loading();

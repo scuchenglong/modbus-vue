@@ -13,7 +13,7 @@
         <span class="avue-logo_title"
               key="1">
           <div>
-           <img alt="" src="img/bg/img-logo.png" width="40">
+           <img alt="" src="img/bg/img-logo.png" width="60">
             <span class="titlelogo">{{website.indexTitle}}</span></div>
         </span>
       </template>
