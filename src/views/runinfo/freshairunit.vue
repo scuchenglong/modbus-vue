@@ -32,7 +32,7 @@
 </template>
 
 <script>
-    import {getList, getDetail, add, update, remove} from "@/api//freshairunit";
+    import {getList, getDetail, add, update, remove} from "@/api/runinfo/freshairunit";
     import {mapGetters} from "vuex";
 
     export default {

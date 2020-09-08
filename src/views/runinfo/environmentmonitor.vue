@@ -32,7 +32,7 @@
 </template>
 
 <script>
-    import {getList, getDetail, add, update, remove} from "@/api//environmentmonitor";
+    import {getList, getDetail, add, update, remove} from "@/api/runinfo/environmentmonitor";
     import {mapGetters} from "vuex";
 
     export default {

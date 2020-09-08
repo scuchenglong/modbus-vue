@@ -32,7 +32,7 @@
 </template>
 
 <script>
-    import {getList, getDetail, add, update, remove} from "@/api//cooltower";
+    import {getList, getDetail, add, update, remove} from "@/api/runinfo/cooltower";
     import {mapGetters} from "vuex";
 
     export default {

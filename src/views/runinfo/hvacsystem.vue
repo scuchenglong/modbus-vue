@@ -32,7 +32,7 @@
 </template>
 
 <script>
-    import {getList, getDetail, add, update, remove} from "@/api//hvacsystem";
+    import {getList, getDetail, add, update, remove} from "@/api/runinfo/hvacsystem";
     import {mapGetters} from "vuex";
 
     export default {

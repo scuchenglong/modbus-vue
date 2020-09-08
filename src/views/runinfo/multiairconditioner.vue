@@ -32,7 +32,7 @@
 </template>
 
 <script>
-    import {getList, getDetail, add, update, remove} from "@/api//multiairconditioner";
+    import {getList, getDetail, add, update, remove} from "@/api/runinfo/multiairconditioner";
     import {mapGetters} from "vuex";
 
     export default {

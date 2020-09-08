@@ -60,19 +60,9 @@ export default {
         dialogClickModal: false,
         column: [
           {
-            label: "主键",
-            prop: "id",
-            rules: [{
-              required: true,
-              message: "请输入主键",
-              trigger: "blur"
-            }]
-          },
-          {
             label: "局码",
             prop: "bureCode",
             rules: [{
-              required: true,
               message: "请输入局码",
               trigger: "blur"
             }]
@@ -81,7 +71,6 @@ export default {
             label: "站码",
             prop: "statCode",
             rules: [{
-              required: true,
               message: "请输入站码",
               trigger: "blur"
             }]
@@ -90,8 +79,15 @@ export default {
             label: "设备id",
             prop: "deviId",
             rules: [{
-              required: true,
               message: "请输入设备id",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "采集时间",
+            prop: "getTime",
+            rules: [{
+              message: "请输入采集时间",
               trigger: "blur"
             }]
           },
@@ -99,7 +95,6 @@ export default {
             label: "冷却水总管供水温度",
             prop: "cwpSuTemp",
             rules: [{
-              required: true,
               message: "请输入冷却水总管供水温度",
               trigger: "blur"
             }]
@@ -108,7 +103,6 @@ export default {
             label: "冷却水总管回水温度",
             prop: "cwpReTemp",
             rules: [{
-              required: true,
               message: "请输入冷却水总管回水温度",
               trigger: "blur"
             }]
@@ -117,7 +111,6 @@ export default {
             label: "冷却水总管供水流量",
             prop: "cwpSuFlo",
             rules: [{
-              required: true,
               message: "请输入冷却水总管供水流量",
               trigger: "blur"
             }]
@@ -126,7 +119,6 @@ export default {
             label: "冷却水总管回水流量",
             prop: "cwpReFlo",
             rules: [{
-              required: true,
               message: "请输入冷却水总管回水流量",
               trigger: "blur"
             }]
@@ -135,7 +127,6 @@ export default {
             label: "冷却水总管供水压力",
             prop: "cwpSuPre",
             rules: [{
-              required: true,
               message: "请输入冷却水总管供水压力",
               trigger: "blur"
             }]
@@ -144,7 +135,6 @@ export default {
             label: "冷却水总管回水压力",
             prop: "cwpRePre",
             rules: [{
-              required: true,
               message: "请输入冷却水总管回水压力",
               trigger: "blur"
             }]
@@ -153,7 +143,6 @@ export default {
             label: "冷冻水总管供水温度",
             prop: "fwpSuTemp",
             rules: [{
-              required: true,
               message: "请输入冷冻水总管供水温度",
               trigger: "blur"
             }]
@@ -162,7 +151,6 @@ export default {
             label: "冷冻水总管回水温度",
             prop: "fwpReTemp",
             rules: [{
-              required: true,
               message: "请输入冷冻水总管回水温度",
               trigger: "blur"
             }]
@@ -171,7 +159,6 @@ export default {
             label: "冷冻水总管供水流量",
             prop: "fwpSuFlo",
             rules: [{
-              required: true,
               message: "请输入冷冻水总管供水流量",
               trigger: "blur"
             }]
@@ -180,7 +167,6 @@ export default {
             label: "冷冻水总管回水流量",
             prop: "fwpReFlo",
             rules: [{
-              required: true,
               message: "请输入冷冻水总管回水流量",
               trigger: "blur"
             }]
@@ -189,7 +175,6 @@ export default {
             label: "冷冻水总管供水压力",
             prop: "fwpSuPre",
             rules: [{
-              required: true,
               message: "请输入冷冻水总管供水压力",
               trigger: "blur"
             }]
@@ -198,7 +183,6 @@ export default {
             label: "冷冻水总管回水压力",
             prop: "fwpRePre",
             rules: [{
-              required: true,
               message: "请输入冷冻水总管回水压力",
               trigger: "blur"
             }]
@@ -207,7 +191,6 @@ export default {
             label: "离心冷机运行状态",
             prop: "chRunSta",
             rules: [{
-              required: true,
               message: "请输入离心冷机运行状态",
               trigger: "blur"
             }]
@@ -216,7 +199,6 @@ export default {
             label: "冷机的油压",
             prop: "chOilPre",
             rules: [{
-              required: true,
               message: "请输入冷机的油压",
               trigger: "blur"
             }]
@@ -225,7 +207,6 @@ export default {
             label: "冷机的油温",
             prop: "chOilTemp",
             rules: [{
-              required: true,
               message: "请输入冷机的油温",
               trigger: "blur"
             }]
@@ -234,7 +215,6 @@ export default {
             label: "离心冷机手自动状态",
             prop: "chAmSta",
             rules: [{
-              required: true,
               message: "请输入离心冷机手自动状态",
               trigger: "blur"
             }]
@@ -243,20 +223,11 @@ export default {
             label: "离心冷机开关状态",
             prop: "chOnSta",
             rules: [{
-              required: true,
               message: "请输入离心冷机开关状态",
               trigger: "blur"
             }]
           },
-          {
-            label: "采集时间",
-            prop: "getTime",
-            rules: [{
-              required: true,
-              message: "请输入采集时间",
-              trigger: "blur"
-            }]
-          },
+
         ]
       },
       data: []

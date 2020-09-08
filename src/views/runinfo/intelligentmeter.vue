@@ -32,7 +32,7 @@
 </template>
 
 <script>
-    import {getList, getDetail, add, update, remove} from "@/api//intelligentmeter";
+    import {getList, getDetail, add, update, remove} from "@/api/runinfo/intelligentmeter";
     import {mapGetters} from "vuex";
 
     export default {

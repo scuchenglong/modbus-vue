@@ -32,7 +32,7 @@
 </template>
 
 <script>
-    import {getList, getDetail, add, update, remove} from "@/api//light";
+    import {getList, getDetail, add, update, remove} from "@/api/runinfo/light";
     import {mapGetters} from "vuex";
 
     export default {
