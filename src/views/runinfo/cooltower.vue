@@ -131,6 +131,30 @@ export default {
               trigger: "blur"
             }]
           },
+          {
+            label: "返回接口名称",
+            prop: "pushType",
+            rules: [{
+              message: "请输入采集时间",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "返回执行状态",
+            prop: "pushRes",
+            rules: [{
+              message: "请输入采集时间",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "返回提示信息",
+            prop: "pushMsg",
+            rules: [{
+              message: "请输入采集时间",
+              trigger: "blur"
+            }]
+          },
         ]
       },
       data: []

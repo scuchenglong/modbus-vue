@@ -149,24 +149,47 @@
                                         trigger: "blur"
                                     }]
                                 },
-                                {
-                                    label: "功率因数",
-                                    prop: "powFac",
-                                    rules: [{
-                                        required: true,
-                                        message: "请输入功率因数",
-                                        trigger: "blur"
-                                    }]
-                                },
-                                {
-                                    label: "采集时间",
-                                    prop: "getTime",
-                                    rules: [{
-                                        required: true,
-                                        message: "请输入采集时间",
-                                        trigger: "blur"
-                                    }]
-                                },
+                      {
+                        label: "功率因数",
+                        prop: "powFac",
+                        rules: [{
+                          required: true,
+                          message: "请输入功率因数",
+                          trigger: "blur"
+                        }]
+                      },
+                      {
+                        label: "采集时间",
+                        prop: "getTime",
+                        rules: [{
+                          message: "请输入采集时间",
+                          trigger: "blur"
+                        }]
+                      },
+                      {
+                        label: "返回接口名称",
+                        prop: "pushType",
+                        rules: [{
+                          message: "请输入采集时间",
+                          trigger: "blur"
+                        }]
+                      },
+                      {
+                        label: "返回执行状态",
+                        prop: "pushRes",
+                        rules: [{
+                          message: "请输入采集时间",
+                          trigger: "blur"
+                        }]
+                      },
+                      {
+                        label: "返回提示信息",
+                        prop: "pushMsg",
+                        rules: [{
+                          message: "请输入采集时间",
+                          trigger: "blur"
+                        }]
+                      },
                     ]
                 },
                 data: []
