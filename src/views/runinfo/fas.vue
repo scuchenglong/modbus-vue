@@ -23,7 +23,7 @@
                    size="small"
                    icon="el-icon-delete"
                    plain
-                   v-if="permission.freshairunit_delete"
+                   v-if="permission.fas_delete"
                    @click="handleDelete">删 除
         </el-button>
       </template>
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import {getList, getDetail, add, update, remove} from "@/api/runinfo/freshairunit";
+import {getList, getDetail, add, update, remove} from "@/api/runinfo/fas";
 import {mapGetters} from "vuex";
 
 export default {
@@ -96,15 +96,6 @@ export default {
             }]
           },
           {
-            label: "采集时间",
-            prop: "getTime",
-            rules: [{
-              required: true,
-              message: "请输入采集时间",
-              trigger: "blur"
-            }]
-          },
-          {
             label: "推送返回值",
             prop: "pushType",
             rules: [{
@@ -132,137 +123,56 @@ export default {
             }]
           },
           {
-            label: "启动状态（默认高速）",
-            prop: "onSta",
+            label: "采集时间",
+            prop: "getTime",
             rules: [{
               required: true,
-              message: "请输入启动状态（默认高速）",
+              message: "请输入采集时间",
               trigger: "blur"
             }]
           },
           {
-            label: "低速启动状态",
-            prop: "lOnSta",
+            label: "报警设备运行状态",
+            prop: "alaRunSta",
             rules: [{
               required: true,
-              message: "请输入低速启动状态",
+              message: "请输入报警设备运行状态",
               trigger: "blur"
             }]
           },
           {
-            label: "停止状态（默认高速）",
-            prop: "stopSta",
+            label: "消防设备编码",
+            prop: "firDevId",
             rules: [{
               required: true,
-              message: "请输入停止状态（默认高速）",
+              message: "请输入消防设备编码",
               trigger: "blur"
             }]
           },
           {
-            label: "低速停止状态",
-            prop: "lStopSta",
+            label: "消防设备位置",
+            prop: "firDevLoc",
             rules: [{
               required: true,
-              message: "请输入低速停止状态",
+              message: "请输入消防设备位置",
               trigger: "blur"
             }]
           },
           {
-            label: "运行状态",
-            prop: "runSta",
+            label: "消防设备运行状态",
+            prop: "firRunSta",
             rules: [{
               required: true,
-              message: "请输入运行状态",
+              message: "请输入消防设备运行状态",
               trigger: "blur"
             }]
           },
           {
-            label: "故障状态",
-            prop: "fauSta",
+            label: "手动报警位置",
+            prop: "aAlaLoc",
             rules: [{
               required: true,
-              message: "请输入故障状态",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "启动控制（默认高速）",
-            prop: "onCtr",
-            rules: [{
-              required: true,
-              message: "请输入启动控制（默认高速）",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "低速启动控制",
-            prop: "lOnCtr",
-            rules: [{
-              required: true,
-              message: "请输入低速启动控制",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "停止控制（默认高速）",
-            prop: "stopCtr",
-            rules: [{
-              required: true,
-              message: "请输入停止控制（默认高速）",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "低速停止控制",
-            prop: "lStopCtr",
-            rules: [{
-              required: true,
-              message: "请输入低速停止控制",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "连锁控制",
-            prop: "lockCtr",
-            rules: [{
-              required: true,
-              message: "请输入连锁控制",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "手动/自动控制",
-            prop: "amCtr",
-            rules: [{
-              required: true,
-              message: "请输入手动/自动控制",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "远程/就地状态",
-            prop: "remLocSta",
-            rules: [{
-              required: true,
-              message: "请输入远程/就地状态",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "累计运行时长",
-            prop: "runTime",
-            rules: [{
-              required: true,
-              message: "请输入累计运行时长",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "能耗总量",
-            prop: "eneCon",
-            rules: [{
-              required: true,
-              message: "请输入能耗总量",
+              message: "请输入手动报警位置",
               trigger: "blur"
             }]
           },
@@ -275,10 +185,10 @@ export default {
     ...mapGetters(["permission"]),
     permissionList() {
       return {
-        addBtn: this.vaildData(this.permission.freshairunit_add, false),
-        viewBtn: this.vaildData(this.permission.freshairunit_view, false),
-        delBtn: this.vaildData(this.permission.freshairunit_delete, false),
-        editBtn: this.vaildData(this.permission.freshairunit_edit, false)
+        addBtn: this.vaildData(this.permission.fas_add, false),
+        viewBtn: this.vaildData(this.permission.fas_view, false),
+        delBtn: this.vaildData(this.permission.fas_delete, false),
+        editBtn: this.vaildData(this.permission.fas_edit, false)
       };
     },
     ids() {

@@ -23,7 +23,7 @@
                    size="small"
                    icon="el-icon-delete"
                    plain
-                   v-if="permission.freshairunit_delete"
+                   v-if="permission.watersupply_delete"
                    @click="handleDelete">删 除
         </el-button>
       </template>
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import {getList, getDetail, add, update, remove} from "@/api/runinfo/freshairunit";
+import {getList, getDetail, add, update, remove} from "@/api/runinfo/watersupply";
 import {mapGetters} from "vuex";
 
 export default {
@@ -96,11 +96,11 @@ export default {
             }]
           },
           {
-            label: "采集时间",
-            prop: "getTime",
+            label: "启动状态",
+            prop: "onSta",
             rules: [{
               required: true,
-              message: "请输入采集时间",
+              message: "请输入启动状态",
               trigger: "blur"
             }]
           },
@@ -132,47 +132,11 @@ export default {
             }]
           },
           {
-            label: "启动状态（默认高速）",
-            prop: "onSta",
-            rules: [{
-              required: true,
-              message: "请输入启动状态（默认高速）",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "低速启动状态",
-            prop: "lOnSta",
-            rules: [{
-              required: true,
-              message: "请输入低速启动状态",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "停止状态（默认高速）",
+            label: "停止状态",
             prop: "stopSta",
             rules: [{
               required: true,
-              message: "请输入停止状态（默认高速）",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "低速停止状态",
-            prop: "lStopSta",
-            rules: [{
-              required: true,
-              message: "请输入低速停止状态",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "运行状态",
-            prop: "runSta",
-            rules: [{
-              required: true,
-              message: "请输入运行状态",
+              message: "请输入停止状态",
               trigger: "blur"
             }]
           },
@@ -186,83 +150,47 @@ export default {
             }]
           },
           {
-            label: "启动控制（默认高速）",
-            prop: "onCtr",
+            label: "手自动状态",
+            prop: "amSta",
             rules: [{
               required: true,
-              message: "请输入启动控制（默认高速）",
+              message: "请输入手自动状态",
               trigger: "blur"
             }]
           },
           {
-            label: "低速启动控制",
-            prop: "lOnCtr",
+            label: "液位报警状态",
+            prop: "liquAla",
             rules: [{
               required: true,
-              message: "请输入低速启动控制",
+              message: "请输入液位报警状态",
               trigger: "blur"
             }]
           },
           {
-            label: "停止控制（默认高速）",
-            prop: "stopCtr",
+            label: "状态监视",
+            prop: "moniSta",
             rules: [{
               required: true,
-              message: "请输入停止控制（默认高速）",
+              message: "请输入状态监视",
               trigger: "blur"
             }]
           },
           {
-            label: "低速停止控制",
-            prop: "lStopCtr",
+            label: "故障报警",
+            prop: "fauAla",
             rules: [{
               required: true,
-              message: "请输入低速停止控制",
+              message: "请输入故障报警",
               trigger: "blur"
             }]
           },
           {
-            label: "连锁控制",
-            prop: "lockCtr",
+            label: "采集时间",
+            prop: "getTIme",
             rules: [{
               required: true,
-              message: "请输入连锁控制",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "手动/自动控制",
-            prop: "amCtr",
-            rules: [{
-              required: true,
-              message: "请输入手动/自动控制",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "远程/就地状态",
-            prop: "remLocSta",
-            rules: [{
-              required: true,
-              message: "请输入远程/就地状态",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "累计运行时长",
-            prop: "runTime",
-            rules: [{
-              required: true,
-              message: "请输入累计运行时长",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "能耗总量",
-            prop: "eneCon",
-            rules: [{
-              required: true,
-              message: "请输入能耗总量",
+              message: "请输入采集时间",
               trigger: "blur"
             }]
           },
@@ -275,10 +203,10 @@ export default {
     ...mapGetters(["permission"]),
     permissionList() {
       return {
-        addBtn: this.vaildData(this.permission.freshairunit_add, false),
-        viewBtn: this.vaildData(this.permission.freshairunit_view, false),
-        delBtn: this.vaildData(this.permission.freshairunit_delete, false),
-        editBtn: this.vaildData(this.permission.freshairunit_edit, false)
+        addBtn: this.vaildData(this.permission.watersupply_add, false),
+        viewBtn: this.vaildData(this.permission.watersupply_view, false),
+        delBtn: this.vaildData(this.permission.watersupply_delete, false),
+        editBtn: this.vaildData(this.permission.watersupply_edit, false)
       };
     },
     ids() {
