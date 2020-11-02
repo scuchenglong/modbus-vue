@@ -114,17 +114,24 @@ export default {
               trigger: "blur"
             }]
           },
-          {
-            label: "设备大类编号",
-            prop: "dLaSortCode",
-            rules: [{
-              required: true,
-              message: "请输入设备大类编号",
-              trigger: "blur"
-            }]
-          },
+          // {
+          //   label: "设备大类编号",
+          //   prop: "dLaSortCode",
+          //   rules: [{
+          //     required: true,
+          //     message: "请输入设备大类编号",
+          //     trigger: "blur"
+          //   }]
+          // },
           {
             label: "设备大类",
+            type: "select",
+            value: "01",
+            dicUrl: "/api/memo-system/dict-biz/dictionary?code=equip_big_type",
+            props: {
+              label: "dictValue",
+              value: "dictKey"
+            },
             prop: "dLaSort",
             rules: [{
               required: true,
@@ -132,17 +139,24 @@ export default {
               trigger: "blur"
             }]
           },
-          {
-            label: "设备小类编号",
-            prop: "dSmSortCode",
-            rules: [{
-              required: true,
-              message: "请输入设备小类编号",
-              trigger: "blur"
-            }]
-          },
+          // {
+          //   label: "设备小类编号",
+          //   prop: "dSmSortCode",
+          //   rules: [{
+          //     required: true,
+          //     message: "请输入设备小类编号",
+          //     trigger: "blur"
+          //   }]
+          // },
           {
             label: "设备小类",
+            type: "select",
+            value: "0301",
+            dicUrl: `/api/memo-system/dict-biz/dictionary?code={{dLaSort}}`,
+            props: {
+              label: "dictValue",
+              value: "dictKey"
+            },
             prop: "dSmSort",
             rules: [{
               required: true,
@@ -291,6 +305,22 @@ export default {
             prop: "dSpecPara",
             rules: [{
               message: "请输入特殊参数",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "额定功率",
+            prop: "ratePower",
+            rules: [{
+              message: "额定功率",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "标识",
+            prop: "useState",
+            rules: [{
+              message: "标识:1：启用2：删除3:报废4:停用5:调拨",
               trigger: "blur"
             }]
           },
