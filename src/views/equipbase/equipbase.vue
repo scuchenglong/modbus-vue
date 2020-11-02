@@ -127,7 +127,11 @@ export default {
             label: "设备大类",
             type: "select",
             value: "01",
+            cascaderItem: ['dSmSort'],
             dicUrl: "/api/memo-system/dict-biz/dictionary?code=equip_big_type",
+            dicFormatter: (res) => {
+              return res.data;//返回字典的层级结构
+            },
             props: {
               label: "dictValue",
               value: "dictKey"
@@ -152,7 +156,9 @@ export default {
             label: "设备小类",
             type: "select",
             value: "0301",
-            dicUrl: `/api/memo-system/dict-biz/dictionary?code={{dLaSort}}`,
+            row: true,
+            cascaderIndex: 0,
+            dicUrl: "/api/memo-system/dict-biz/dictionary?code={{key}}",
             props: {
               label: "dictValue",
               value: "dictKey"
