@@ -91,107 +91,107 @@ export default {
               trigger: "blur"
             }]
           },
+          // {
+          //   label: "冷却水总管供水温度",
+          //   prop: "cwpSuTemp",
+          //   rules: [{
+          //     message: "请输入冷却水总管供水温度",
+          //     trigger: "blur"
+          //   }]
+          // },
+          // {
+          //   label: "冷却水总管回水温度",
+          //   prop: "cwpReTemp",
+          //   rules: [{
+          //     message: "请输入冷却水总管回水温度",
+          //     trigger: "blur"
+          //   }]
+          // },
+          // {
+          //   label: "冷却水总管供水流量",
+          //   prop: "cwpSuFlo",
+          //   rules: [{
+          //     message: "请输入冷却水总管供水流量",
+          //     trigger: "blur"
+          //   }]
+          // },
+          // {
+          //   label: "冷却水总管回水流量",
+          //   prop: "cwpReFlo",
+          //   rules: [{
+          //     message: "请输入冷却水总管回水流量",
+          //     trigger: "blur"
+          //   }]
+          // },
+          // {
+          //   label: "冷却水总管供水压力",
+          //   prop: "cwpSuPre",
+          //   rules: [{
+          //     message: "请输入冷却水总管供水压力",
+          //     trigger: "blur"
+          //   }]
+          // },
+          // {
+          //   label: "冷却水总管回水压力",
+          //   prop: "cwpRePre",
+          //   rules: [{
+          //     message: "请输入冷却水总管回水压力",
+          //     trigger: "blur"
+          //   }]
+          // },
+          // {
+          //   label: "冷冻水总管供水温度",
+          //   prop: "fwpSuTemp",
+          //   rules: [{
+          //     message: "请输入冷冻水总管供水温度",
+          //     trigger: "blur"
+          //   }]
+          // },
+          // {
+          //   label: "冷冻水总管回水温度",
+          //   prop: "fwpReTemp",
+          //   rules: [{
+          //     message: "请输入冷冻水总管回水温度",
+          //     trigger: "blur"
+          //   }]
+          // },
+          // {
+          //   label: "冷冻水总管供水流量",
+          //   prop: "fwpSuFlo",
+          //   rules: [{
+          //     message: "请输入冷冻水总管供水流量",
+          //     trigger: "blur"
+          //   }]
+          // },
+          // {
+          //   label: "冷冻水总管回水流量",
+          //   prop: "fwpReFlo",
+          //   rules: [{
+          //     message: "请输入冷冻水总管回水流量",
+          //     trigger: "blur"
+          //   }]
+          // },
+          // {
+          //   label: "冷冻水总管供水压力",
+          //   prop: "fwpSuPre",
+          //   rules: [{
+          //     message: "请输入冷冻水总管供水压力",
+          //     trigger: "blur"
+          //   }]
+          // },
+          // {
+          //   label: "冷冻水总管回水压力",
+          //   prop: "fwpRePre",
+          //   rules: [{
+          //     message: "请输入冷冻水总管回水压力",
+          //     trigger: "blur"
+          //   }]
+          // },
           {
-            label: "冷却水总管供水温度",
-            prop: "cwpSuTemp",
-            rules: [{
-              message: "请输入冷却水总管供水温度",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管回水温度",
-            prop: "cwpReTemp",
-            rules: [{
-              message: "请输入冷却水总管回水温度",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管供水流量",
-            prop: "cwpSuFlo",
-            rules: [{
-              message: "请输入冷却水总管供水流量",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管回水流量",
-            prop: "cwpReFlo",
-            rules: [{
-              message: "请输入冷却水总管回水流量",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管供水压力",
-            prop: "cwpSuPre",
-            rules: [{
-              message: "请输入冷却水总管供水压力",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管回水压力",
-            prop: "cwpRePre",
-            rules: [{
-              message: "请输入冷却水总管回水压力",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管供水温度",
-            prop: "fwpSuTemp",
-            rules: [{
-              message: "请输入冷冻水总管供水温度",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管回水温度",
-            prop: "fwpReTemp",
-            rules: [{
-              message: "请输入冷冻水总管回水温度",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管供水流量",
-            prop: "fwpSuFlo",
-            rules: [{
-              message: "请输入冷冻水总管供水流量",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管回水流量",
-            prop: "fwpReFlo",
-            rules: [{
-              message: "请输入冷冻水总管回水流量",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管供水压力",
-            prop: "fwpSuPre",
-            rules: [{
-              message: "请输入冷冻水总管供水压力",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管回水压力",
-            prop: "fwpRePre",
-            rules: [{
-              message: "请输入冷冻水总管回水压力",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "离心冷机运行状态",
+            label: "冷机运行状态",
             prop: "chRunSta",
             rules: [{
-              message: "请输入离心冷机运行状态",
+              message: "请输入冷机运行状态",
               trigger: "blur"
             }]
           },
@@ -212,18 +212,26 @@ export default {
             }]
           },
           {
-            label: "离心冷机手自动状态",
+            label: "冷机手自动状态",
             prop: "chAmSta",
             rules: [{
-              message: "请输入离心冷机手自动状态",
+              message: "请输入冷机手自动状态",
               trigger: "blur"
             }]
           },
           {
-            label: "离心冷机开关状态",
+            label: "冷机开关状态",
             prop: "chOnSta",
             rules: [{
-              message: "请输入离心冷机开关状态",
+              message: "请输入冷机开关状态",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "冷机运行时长",
+            prop: "runTime",
+            rules: [{
+              message: "冷机运行时长",
               trigger: "blur"
             }]
           },
