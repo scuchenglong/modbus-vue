@@ -23,7 +23,7 @@
                    size="small"
                    icon="el-icon-delete"
                    plain
-                   v-if="permission.watersystem_delete"
+                   v-if="permission.ctrlight_delete"
                    @click="handleDelete">删 除
         </el-button>
       </template>
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import {getList, getDetail, add, update, remove, pushData} from "@/api/runinfo/watersystem";
+import {getList, getDetail, add, update, remove, pushData} from "@/api/control/ctrlight";
 import {mapGetters} from "vuex";
 
 export default {
@@ -81,119 +81,20 @@ export default {
             }]
           },
           {
-            label: "设备id",
-            prop: "deviId",
+            label: "照明区域编号",
+            prop: "areaId",
             rules: [{
               required: true,
-              message: "请输入设备id",
+              message: "请输入照明区域编号",
               trigger: "blur"
             }]
           },
           {
-            label: "冷却水总管供水温度",
-            prop: "cwpSuTemp",
+            label: "照明区域名称",
+            prop: "areaName",
             rules: [{
               required: true,
-              message: "请输入冷却水总管供水温度",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管回水温度",
-            prop: "cwpReTemp",
-            rules: [{
-              required: true,
-              message: "请输入冷却水总管回水温度",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管供水流量",
-            prop: "cwpSuFlo",
-            rules: [{
-              required: true,
-              message: "请输入冷却水总管供水流量",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管回水流量",
-            prop: "cwpReFlo",
-            rules: [{
-              required: true,
-              message: "请输入冷却水总管回水流量",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管供水压力",
-            prop: "cwpSuPre",
-            rules: [{
-              required: true,
-              message: "请输入冷却水总管供水压力",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管回水压力",
-            prop: "cwpRePre",
-            rules: [{
-              required: true,
-              message: "请输入冷却水总管回水压力",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管供水温度",
-            prop: "fwpSuTemp",
-            rules: [{
-              required: true,
-              message: "请输入冷冻水总管供水温度",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管回水温度",
-            prop: "fwpReTemp",
-            rules: [{
-              required: true,
-              message: "请输入冷冻水总管回水温度",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管供水流量",
-            prop: "fwpSuFlo",
-            rules: [{
-              required: true,
-              message: "请输入冷冻水总管供水流量",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管回水流量",
-            prop: "fwpReFlo",
-            rules: [{
-              required: true,
-              message: "请输入冷冻水总管回水流量",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管供水压力",
-            prop: "fwpSuPre",
-            rules: [{
-              required: true,
-              message: "请输入冷冻水总管供水压力",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管回水压力",
-            prop: "fwpRePre",
-            rules: [{
-              required: true,
-              message: "请输入冷冻水总管回水压力",
+              message: "请输入照明区域名称",
               trigger: "blur"
             }]
           },
@@ -232,6 +133,60 @@ export default {
               trigger: "blur"
             }]
           },
+          {
+            label: "是否支持目标档位控制模式:1支持，0不支持",
+            prop: "switchMode",
+            rules: [{
+              required: true,
+              message: "请输入是否支持目标档位控制模式:1支持，0不支持",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "是否支持目标照度控制模式:1支持，0不支持",
+            prop: "illuminateMode",
+            rules: [{
+              required: true,
+              message: "请输入是否支持目标照度控制模式:1支持，0不支持",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "全开指令值:1支持，0不支持",
+            prop: "fullOpen",
+            rules: [{
+              required: true,
+              message: "请输入全开指令值:1支持，0不支持",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "1/2开指令值:1支持，0不支持",
+            prop: "halfOpen",
+            rules: [{
+              required: true,
+              message: "请输入1/2开指令值:1支持，0不支持",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "1/4指令值:1支持，0不支持",
+            prop: "quarterOpen",
+            rules: [{
+              required: true,
+              message: "请输入1/4指令值:1支持，0不支持",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "全关指令值:1支持，0不支持",
+            prop: "fullClose",
+            rules: [{
+              required: true,
+              message: "请输入全关指令值:1支持，0不支持",
+              trigger: "blur"
+            }]
+          },
         ]
       },
       data: []
@@ -241,10 +196,10 @@ export default {
     ...mapGetters(["permission"]),
     permissionList() {
       return {
-        addBtn: this.vaildData(this.permission.watersystem_add, false),
-        viewBtn: this.vaildData(this.permission.watersystem_view, false),
-        delBtn: this.vaildData(this.permission.watersystem_delete, false),
-        editBtn: this.vaildData(this.permission.watersystem_edit, false)
+        addBtn: this.vaildData(this.permission.ctrlight_add, false),
+        viewBtn: this.vaildData(this.permission.ctrlight_view, false),
+        delBtn: this.vaildData(this.permission.ctrlight_delete, false),
+        editBtn: this.vaildData(this.permission.ctrlight_edit, false)
       };
     },
     ids() {

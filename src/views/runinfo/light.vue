@@ -87,29 +87,29 @@ export default {
             }]
           },
           {
-            label: "设备id",
-            prop: "deviId",
+            label: "照明区域编号",
+            prop: "areaId",
             rules: [{
               required: true,
-              message: "请输入设备id",
+              message: "请输入照明区域编号",
               trigger: "blur"
             }]
           },
           {
-            label: "开关状态",
-            prop: "lOnSta",
+            label: "照明区域名称",
+            prop: "areaName",
             rules: [{
               required: true,
-              message: "请输入开关状态",
+              message: "请输入照明区域名称",
               trigger: "blur"
             }]
           },
           {
-            label: "照明手自动状态",
-            prop: "lAmCtr",
+            label: "当前区域开关模式:当前区域开关模式",
+            prop: "onOffState",
             rules: [{
               required: true,
-              message: "请输入照明手自动状态",
+              message: "请输入当前区域开关模式:当前区域开关模式",
               trigger: "blur"
             }]
           },
@@ -117,40 +117,62 @@ export default {
             label: "采集时间",
             prop: "getTime",
             rules: [{
+              required: true,
               message: "请输入采集时间",
               trigger: "blur"
             }]
           },
           {
-            label: "返回接口名称",
-            prop: "pushType",
-            rules: [{
-              message: "请输入采集时间",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "返回执行状态",
-            prop: "pushRes",
-            rules: [{
-              message: "请输入采集时间",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "返回提示信息",
-            prop: "pushMsg",
-            rules: [{
-              message: "请输入采集时间",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "运行状态",
-            prop: "add",
+            label: "运行状态,若当前照明区域所有回路都正常，则返回正常，若有回路故障/离线等，则返回异常",
+            prop: "runState",
             rules: [{
               required: true,
-              message: "请输入运行状态",
+              message: "请输入运行状态,若当前照明区域所有回路都正常，则返回正常，若有回路故障/离线等，则返回异常",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "推送返回值",
+            prop: "pushType",
+            rules: [{
+              required: true,
+              message: "请输入推送返回值",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "推送返回值",
+            prop: "pushRes",
+            rules: [{
+              required: true,
+              message: "请输入推送返回值",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "推送返回值",
+            prop: "pushMsg",
+            rules: [{
+              required: true,
+              message: "请输入推送返回值",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "照明手自动状态",
+            prop: "autoState",
+            rules: [{
+              required: true,
+              message: "请输入照明手自动状态",
+              trigger: "blur"
+            }]
+          },
+          {
+            label: "照明区域当前照度值：取平均值",
+            prop: "illuminateValue",
+            rules: [{
+              required: true,
+              message: "请输入照明区域当前照度值：取平均值",
               trigger: "blur"
             }]
           },

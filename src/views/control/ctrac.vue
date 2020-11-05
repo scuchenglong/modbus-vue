@@ -23,7 +23,7 @@
                    size="small"
                    icon="el-icon-delete"
                    plain
-                   v-if="permission.watersystem_delete"
+                   v-if="permission.ctrac_delete"
                    @click="handleDelete">删 除
         </el-button>
       </template>
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import {getList, getDetail, add, update, remove, pushData} from "@/api/runinfo/watersystem";
+import {getList, getDetail, add, update, remove, pushData} from "@/api/control/ctrac";
 import {mapGetters} from "vuex";
 
 export default {
@@ -81,119 +81,20 @@ export default {
             }]
           },
           {
-            label: "设备id",
-            prop: "deviId",
+            label: "空调模拟区域id",
+            prop: "areaId",
             rules: [{
               required: true,
-              message: "请输入设备id",
+              message: "请输入空调模拟区域id",
               trigger: "blur"
             }]
           },
           {
-            label: "冷却水总管供水温度",
-            prop: "cwpSuTemp",
+            label: "空调模拟区域名称",
+            prop: "areaName",
             rules: [{
               required: true,
-              message: "请输入冷却水总管供水温度",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管回水温度",
-            prop: "cwpReTemp",
-            rules: [{
-              required: true,
-              message: "请输入冷却水总管回水温度",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管供水流量",
-            prop: "cwpSuFlo",
-            rules: [{
-              required: true,
-              message: "请输入冷却水总管供水流量",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管回水流量",
-            prop: "cwpReFlo",
-            rules: [{
-              required: true,
-              message: "请输入冷却水总管回水流量",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管供水压力",
-            prop: "cwpSuPre",
-            rules: [{
-              required: true,
-              message: "请输入冷却水总管供水压力",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷却水总管回水压力",
-            prop: "cwpRePre",
-            rules: [{
-              required: true,
-              message: "请输入冷却水总管回水压力",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管供水温度",
-            prop: "fwpSuTemp",
-            rules: [{
-              required: true,
-              message: "请输入冷冻水总管供水温度",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管回水温度",
-            prop: "fwpReTemp",
-            rules: [{
-              required: true,
-              message: "请输入冷冻水总管回水温度",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管供水流量",
-            prop: "fwpSuFlo",
-            rules: [{
-              required: true,
-              message: "请输入冷冻水总管供水流量",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管回水流量",
-            prop: "fwpReFlo",
-            rules: [{
-              required: true,
-              message: "请输入冷冻水总管回水流量",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管供水压力",
-            prop: "fwpSuPre",
-            rules: [{
-              required: true,
-              message: "请输入冷冻水总管供水压力",
-              trigger: "blur"
-            }]
-          },
-          {
-            label: "冷冻水总管回水压力",
-            prop: "fwpRePre",
-            rules: [{
-              required: true,
-              message: "请输入冷冻水总管回水压力",
+              message: "请输入空调模拟区域名称",
               trigger: "blur"
             }]
           },
@@ -209,7 +110,6 @@ export default {
             label: "推送返回值",
             prop: "pushType",
             rules: [{
-              required: true,
               message: "请输入推送返回值",
               trigger: "blur"
             }]
@@ -218,7 +118,6 @@ export default {
             label: "推送返回值",
             prop: "pushRes",
             rules: [{
-              required: true,
               message: "请输入推送返回值",
               trigger: "blur"
             }]
@@ -227,7 +126,6 @@ export default {
             label: "推送返回值",
             prop: "pushMsg",
             rules: [{
-              required: true,
               message: "请输入推送返回值",
               trigger: "blur"
             }]
@@ -241,10 +139,10 @@ export default {
     ...mapGetters(["permission"]),
     permissionList() {
       return {
-        addBtn: this.vaildData(this.permission.watersystem_add, false),
-        viewBtn: this.vaildData(this.permission.watersystem_view, false),
-        delBtn: this.vaildData(this.permission.watersystem_delete, false),
-        editBtn: this.vaildData(this.permission.watersystem_edit, false)
+        addBtn: this.vaildData(this.permission.ctrac_add, false),
+        viewBtn: this.vaildData(this.permission.ctrac_view, false),
+        delBtn: this.vaildData(this.permission.ctrac_delete, false),
+        editBtn: this.vaildData(this.permission.ctrac_edit, false)
       };
     },
     ids() {
