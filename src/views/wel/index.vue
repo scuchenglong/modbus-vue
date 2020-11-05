@@ -14,51 +14,51 @@
           </div>
         </div>
       </div>
-      <div class="wel__extra">
-        <div class="wel__extra-item">
-          <p class="wel__extra-title">
-            {{ $t('wel.count')}}
-          </p>
-          <p class="wel__extra-subtitle">
-            56
-          </p>
-        </div>
-        <div class="wel__extra-item">
-          <p class="wel__extra-title">
-            {{ $t('wel.team')}}
-          </p>
-          <p class="wel__extra-subtitle">
-            98 <span>/ 100</span>
-          </p>
-        </div>
-        <div class="wel__extra-item">
-          <p class="wel__extra-title">
+<!--      <div class="wel__extra">-->
+<!--        <div class="wel__extra-item">-->
+<!--          <p class="wel__extra-title">-->
+<!--            {{ $t('wel.count')}}-->
+<!--          </p>-->
+<!--          <p class="wel__extra-subtitle">-->
+<!--            56-->
+<!--          </p>-->
+<!--        </div>-->
+<!--        <div class="wel__extra-item">-->
+<!--          <p class="wel__extra-title">-->
+<!--            {{ $t('wel.team')}}-->
+<!--          </p>-->
+<!--          <p class="wel__extra-subtitle">-->
+<!--            98 <span>/ 100</span>-->
+<!--          </p>-->
+<!--        </div>-->
+<!--        <div class="wel__extra-item">-->
+<!--          <p class="wel__extra-title">-->
 
-            {{ $t('wel.project')}}
-          </p>
-          <p class="wel__extra-subtitle">
-            2,223
-          </p>
-        </div>
-      </div>
+<!--            {{ $t('wel.project')}}-->
+<!--          </p>-->
+<!--          <p class="wel__extra-subtitle">-->
+<!--            2,223-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
     </div>
     <basic-container>
       <avue-data-box :option="option1"></avue-data-box>
     </basic-container>
 
-    <el-row :span="24">
-      <el-col :span="18">
+    <el-row :span="30">
+      <el-col :span="24">
         <basic-container>
           <avue-data-progress :option="option3"
                               style="margin-bottom:20px"></avue-data-progress>
           <avue-data-tabs :option="option"></avue-data-tabs>
         </basic-container>
       </el-col>
-      <el-col :span="6">
-        <basic-container>
-          <avue-data-icons :option="option2"></avue-data-icons>
-        </basic-container>
-      </el-col>
+<!--      <el-col :span="6">-->
+<!--        <basic-container>-->
+<!--          <avue-data-icons :option="option2"></avue-data-icons>-->
+<!--        </basic-container>-->
+<!--      </el-col>-->
     </el-row>
     <!-- <basic-container>
       <avue-crud :option="option4"
@@ -97,34 +97,34 @@
           data: [
             {
               title: this.$t("wel.data4.column1"),
-              count: 12332,
+              // count: 12332,
               icon: "el-icon-warning",
               color: "rgb(49, 180, 141)",
-              href: "http://www.22tianbo.com",
+              href: "/#/equipbase/equipbase",
               target: "_blank"
             },
             {
               title: this.$t("wel.data4.column2"),
-              count: 33,
+              // count: 33,
               icon: "el-icon-view",
               color: "rgb(56, 161, 242)",
-              href: "http://www.22tianbo.com",
+              href: "/#/control/ctrlight",
               target: "_blank"
             },
             {
               title: this.$t("wel.data4.column3"),
-              count: 2223,
+              // count: 2223,
               icon: "el-icon-setting",
               color: "rgb(117, 56, 199)",
-              href: "http://www.22tianbo.com",
+              href: "/#/runinfo/elevator",
               target: "_blank"
             },
             {
               title: this.$t("wel.data4.column4"),
-              count: 2223,
+              // count: 2223,
               icon: "el-icon-setting",
               color: "rgb(230, 71, 88)",
-              href: "http://www.22tianbo.com",
+              href: "/#/monitor/log/error",
               target: "_blank"
             }
           ]
@@ -133,69 +133,69 @@
       option3() {
         return {
           span: 8,
-          data: [
-            {
-              title: this.$t("wel.data3.column1"),
-              color: "rgb(178, 159, 255)",
-              count: 32,
-              href: "http://www.22tianbo.com",
-              target: "_blank"
-            },
-            {
-              title: this.$t("wel.data3.column2"),
-              color: "rgb(230, 71, 88)",
-              count: 32,
-              href: "http://www.22tianbo.com",
-              target: "_blank"
-            },
-            {
-              title: this.$t("wel.data3.column3"),
-              color: "rgb(230, 71, 88)",
-              count: 32,
-              href: "http://www.22tianbo.com",
-              target: "_blank"
-            }
-          ]
+          // data: [
+          //   {
+          //     title: this.$t("wel.data3.column1"),
+          //     color: "rgb(178, 159, 255)",
+          //     count: 32,
+          //     href: "",
+          //     target: "_blank"
+          //   },
+          //   {
+          //     title: this.$t("wel.data3.column2"),
+          //     color: "rgb(230, 71, 88)",
+          //     count: 32,
+          //     href: "",
+          //     target: "_blank"
+          //   },
+          //   {
+          //     title: this.$t("wel.data3.column3"),
+          //     color: "rgb(230, 71, 88)",
+          //     count: 32,
+          //     href: "",
+          //     target: "_blank"
+          //   }
+          // ]
         };
       },
       option2() {
         return {
           span: 12,
-          data: [
-            {
-              title: this.$t("wel.data2.column1"),
-              count: 12678,
-              icon: "el-icon-tickets",
-              href: "http://www.22tianbo.com",
-              target: "_blank"
-            },
-            {
-              title: this.$t("wel.data2.column2"),
-              count: 22139,
-              icon: "el-icon-success",
-              href: "http://www.22tianbo.com",
-              target: "_blank"
-            },
-            {
-              title: this.$t("wel.data2.column3"),
-              count: 35623,
-              icon: "el-icon-info",
-              href: "http://www.22tianbo.com",
-              target: "_blank"
-            },
-            {
-              title: this.$t("wel.data2.column4"),
-              count: 16826,
-              icon: "el-icon-message",
-              href: "http://www.22tianbo.com",
-              target: "_blank"
-            }
-          ]
+          // data: [
+          //   {
+          //     title: this.$t("wel.data2.column1"),
+          //     count: 12678,
+          //     icon: "el-icon-tickets",
+          //     href: "",
+          //     target: "_blank"
+          //   },
+          //   {
+          //     title: this.$t("wel.data2.column2"),
+          //     count: 22139,
+          //     icon: "el-icon-success",
+          //     href: "",
+          //     target: "_blank"
+          //   },
+          //   {
+          //     title: this.$t("wel.data2.column3"),
+          //     count: 35623,
+          //     icon: "el-icon-info",
+          //     href: "",
+          //     target: "_blank"
+          //   },
+          //   {
+          //     title: this.$t("wel.data2.column4"),
+          //     count: 16826,
+          //     icon: "el-icon-message",
+          //     href: "",
+          //     target: "_blank"
+          //   }
+          // ]
         };
       },
       option() {
         return {
-          span: 8,
+          span: 6,
           data: [
             {
               title: this.$t("wel.data.column1"),
@@ -222,6 +222,15 @@
               allcount: 10222,
               text: this.$t("wel.data.text3"),
               color: "rgb(56, 161, 242)",
+              key: this.$t("wel.data.key3")
+            },
+            {
+              title: this.$t("wel.data.column3"),
+              subtitle: this.$t("wel.data.subtitle"),
+              count: 908,
+              allcount: 10222,
+              text: this.$t("wel.data.text3"),
+              color: "rgb(117, 56, 199)",
               key: this.$t("wel.data.key3")
             }
           ]

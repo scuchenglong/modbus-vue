@@ -7,22 +7,22 @@ export default {
     search: '请输入搜索内容',
     menuTip: '没有发现菜单',
     wel: {
-        info: 'wel/info标签哈哈！',
-        dept: 'wel/dept标签哈哈哈！',
+        info: '欢迎登录!',
+        dept: '欢迎登录铁科院能源管理系统!',
         team: '活跃用户',
         project: '项目访问',
     count: '服务数量',
     data: {
       subtitle: '实时',
-      column1: '分类统计',
-      column2: '附件统计',
-      column3: '文章统计',
+      column1: '统计',
+      column2: '统计',
+      column3: '统计',
       key1: '分',
       key2: '附',
       key3: '评',
-      text1: '当前分类总记录数',
-      text2: '当前上传的附件数',
-      text3: '评论次数'
+      text1: '当前总记录数',
+      text2: '当前总记录数',
+      text3: '当前总记录数'
     },
     data2: {
       column1: '今日注册',
@@ -36,10 +36,10 @@ export default {
       column3: '签到率（日同比 11%）'
     },
     data4: {
-      column1: '错误日志',
-      column2: '数据展示',
-      column3: '权限管理',
-      column4: '用户管理'
+      column1: '设备信息',
+      column2: '控制信息',
+      column3: '运行信息',
+      column4: '错误日志'
     },
     table: {
       rw: '工作任务',
