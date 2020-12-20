@@ -21,6 +21,12 @@
       <template slot="menuLeft">
         <el-button type="danger"
                    size="small"
+                   icon="el-icon-plus"
+                   plain
+                   @click="pushAll">全部推送
+        </el-button>
+        <el-button type="danger"
+                   size="small"
                    icon="el-icon-delete"
                    plain
                    v-if="permission.equipbase_delete"
@@ -41,7 +47,7 @@
 
 <script>
 import AvueUeditor from 'avue-plugin-ueditor';
-import {getList, getDetail, add, update, remove, pushBase} from "@/api/equipbase/equipbase";
+import {getList, getDetail, add, update, remove, pushBase, pushAll} from "@/api/equipbase/equipbase";
 import {mapGetters} from "vuex";
 
 export default {
@@ -396,6 +402,24 @@ export default {
     }
   },
   methods: {
+    pushAll() {
+      this.$confirm("确定推送全部数据?", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning"
+      })
+          .then(() => {
+            pushAll().then(() => {
+              this.onLoad(this.page);
+              this.$message({
+                type: "success",
+                message: "操作成功!"
+              });
+            }, error => {
+              console.log(error);
+            });
+          })
+    },
     pushBase(row) {
       this.$confirm("确定推送本条数据?", {
         confirmButtonText: "确定",

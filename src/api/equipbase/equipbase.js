@@ -10,6 +10,13 @@ export const pushBase = (id) => {
     })
 }
 
+export const pushAll = () => {
+    return request({
+        url: '/api/memo-equipbase/equipbase/pushAll',
+        method: 'post',
+    })
+}
+
 export const getList = (current, size, params) => {
     return request({
         url: '/api/memo-equipbase/equipbase/list',
