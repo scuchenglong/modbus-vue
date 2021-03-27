@@ -52,7 +52,7 @@ export const remove = (ids) => {
 
 export const add = (row) => {
     return request({
-        url: '/api/memo-equipbase/equipbase/submit',
+        url: '/api/memo-equipbase/equipbase/save',
         method: 'post',
         data: row
     })
